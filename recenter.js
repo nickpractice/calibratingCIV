@@ -10,9 +10,6 @@ AFRAME.registerComponent('recenter', {
     },
     init() {
       this.camera = document.getElementById('camera')
-    //   this.output = document.getElementById('recenterOut')
-    //   document.getElementById('recenter').addEventListener('click', () => this.recenter())
-    //   document.getElementById('recenterSmart').addEventListener('click', () => this.smartRecenter())
       this.origin = this.camera.object3D.position.clone()
       this.recenterSum = this.data.recenterDistance * 1.4
     },
@@ -29,17 +26,13 @@ AFRAME.registerComponent('recenter', {
       }
     },
     recenter() {
-    //  this.showMessage('recenter')
       this.origin.set(0, 1, 0)
       this.el.sceneEl.emit('recenter', {origin: this.origin, facing: {w: 0, x: 0, y: 0, z: 0}})
       // This line isn't required, but it prevents the auto smart recentering from happening
-      this.camera.object3D.copy(this.origin)
+      // this.camera.object3D.copy(this.origin)
     },
     smartRecenter() {
-      // 'Smart recenter' is a term we coined for resetting the tracking to the current tracked
-      // position of the camera. It clears the map and resets tracking, but virtual objects will
-      // appear to stay in the same place
-      //this.showMessage('smart recentered')
+
       this.origin.copy(this.camera.object3D.position)
       if (this.data.recenterHeight) {
         // Recenter with current x,z position, but adjust height to prevent scale drift
