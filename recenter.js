@@ -22,6 +22,7 @@ AFRAME.registerComponent('recenter', {
           moveZ > this.data.recenterDistance ||
           moveX + moveZ > this.recenterSum) {
           this.smartRecenter()
+          console.log("hello")
         }
       }
     },
