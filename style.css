@@ -15,6 +15,32 @@ body {
   opacity: 50%;
 }
 
+
+#loadBackground {
+  background-image: url('assets/TechCoreLogo.png');
+}
+
+#requestingCameraPermissions {
+  color: black;
+  background-color: white;
+}
+#requestingCameraIcon {
+  /* This changes the image from white to black */
+  filter: invert(1);
+}
+
+.prompt-box-8w {
+  background-color: white;
+  color: #00FF00;
+}
+.prompt-button-8w {
+  background-color: #0000FF;
+}
+
+.button-primary-8w {
+  background-color: #7611B7;
+}
+
 #sidebar a {
   position: absolute;
   padding: 2px 2px;
